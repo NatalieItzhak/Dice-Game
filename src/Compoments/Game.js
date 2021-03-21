@@ -43,6 +43,7 @@ class Game extends React.Component {
             playerRound.currentScore += dice1 + dice2;
             players[this.state.playerTurn] = playerRound;
             this.setState({ players });
+           
         }
         this.setState({ dice: [dice1, dice2] });
     };
@@ -57,6 +58,7 @@ class Game extends React.Component {
             players[0].holdScore = 0;
             players[1].holdScore = 0;
             players[this.state.playerTurn] = playerRound;
+          
         }
         playerRound.currentScore = 0;
         this.setState({ players });
@@ -68,10 +70,11 @@ class Game extends React.Component {
     reset = async () => {
         this.setState(this.startState);
     };
+    
 
 
     render() {
-        const gameWinner = Math.max( this.state.players[0].holdScore, this.state.players[1].holdScore) >=  this.state.scoreToWin;
+       
         return (
             <div className="gameCont">
                 <div className="playersCont">
